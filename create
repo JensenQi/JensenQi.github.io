@@ -1,0 +1,25 @@
+
+FILE_NAME=`echo $1 | sed 's/[ ][ ]*/-/g'`
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+TODAY=$(date "+%Y-%m-%d")
+FILE_PATH=${SHELL_FOLDER}/_posts/${TODAY}-${FILE_NAME}.md
+IMAGE_PATH=${SHELL_FOLDER}/assets/${TODAY}-${FILE_NAME}
+
+if [ ! -f "$FILE_PATH"  ]; then
+    echo "---" > $FILE_PATH
+    echo "title: $1" >> $FILE_PATH
+    echo "tags: " >> $FILE_PATH
+    echo "mermaid: " >> $FILE_PATH
+    echo "mathjax: " >> $FILE_PATH
+    echo "mathjax_autoNumber: true" >> $FILE_PATH
+    echo "typora-root-url: .." >> $FILE_PATH
+    echo "typora-copy-images-to: ../assets/\${filename}" >> $FILE_PATH
+    echo "---" >> $FILE_PATH
+    echo "" >> $FILE_PATH
+    echo "" >> $FILE_PATH
+    mkdir -p ${IMAGE_PATH}
+else
+    echo "文件 ${FILE_PATH} 已存在"
+fi
+
+
