@@ -1,0 +1,39 @@
+*~
+~*
+*.diff
+*.patch
+*.bak
+
+# idea
+.idea
+.tmp
+
+# macOS metadata
+.DS_Store
+._*
+
+# vim
+*.swp
+*.swo
+
+# vscode
+/.vscode/
+
+*.log
+*.log.*
+
+node_modules/
+.sass-cache/
+
+/.bundle/
+/vendor/bundle
+*.gem
+
+yarn.lock
+package-lock.json
+Gemfile.lock
+
+_site/
+.jekyll-metadata
+.jekyll-cache/
+
