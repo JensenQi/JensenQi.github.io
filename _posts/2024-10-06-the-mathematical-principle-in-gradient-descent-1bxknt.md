@@ -58,22 +58,22 @@ $$
 并且根据梯度的定义，函数 $F(\vec{X})$ 在某点 $X_t(x_1, x_2, \cdots, x_d)$ 上的梯度为
 
 $$
-\textbf{\text{grad}} F(\vec{X_t})= \Big(\frac{\partial F}{\partial x_1}\Big|_{X_t}, \frac{\partial F}{\partial x_2}\Big|_{X_t},  \cdots , \frac{\partial F}{\partial x_d}\Big|_{X_t}\Big)
+\nabla F(\vec{X_t})= \Big(\frac{\partial F}{\partial x_1}\Big|_{X_t}, \frac{\partial F}{\partial x_2}\Big|_{X_t},  \cdots , \frac{\partial F}{\partial x_d}\Big|_{X_t}\Big)
 $$
 
-那么极限就可以改写为梯度 $\textbf{\text{grad}} F(\vec{X_t})$ 与方向向量 $l_t$ 的内积形式
+那么极限就可以改写为梯度 $\nabla F(\vec{X_t})$ 与方向向量 $l_t$ 的内积形式
 
 $$
-\lim_{|| X_tX_{t+1}|| \rightarrow0} \frac{F(X_{t+1}) - F(X_t)}{|| X_tX_{t+1}||}  = \textbf{\text{grad}} F(\vec{X_t}) \cdot l_t
+\lim_{|| X_tX_{t+1}|| \rightarrow0} \frac{F(X_{t+1}) - F(X_t)}{|| X_tX_{t+1}||}  =\nabla F(\vec{X_t}) \cdot l_t
 $$
 
 根据柯西-施瓦茨不等式，有
 
 $$
-|\textbf{\text{grad}} F(\vec{X_t}) \cdot l_t| \leq ||\textbf{\text{grad}} F(\vec{X_t})|| *  ||l_t|| \leq ||\textbf{\text{grad}} F(\vec{X_t})||
+|\nabla F(\vec{X_t}) \cdot l_t| \leq ||\nabla F(\vec{X_t})|| *  ||l_t|| \leq ||\nabla F(\vec{X_t})||
 $$
 
-上述不等式当且仅当 $\textbf{\text{grad}} F(\vec{X_t})$ 与方向向量 $l_t$ 方向相同时等号成立。也就意味着，点 $X_t$ 与邻域内的另一点 $X_{t+1}$ 构成的向量 $X_tX_{t+1}$ 方向与函数 $F(\vec{X})$ 在点 $X_t$ 上的梯度方向一致时，函数的变化率 $\lim_{|| X_tX_{t+1}|| \rightarrow0} \frac{F(X_{t+1}) - F(X_t)}{|| X_tX_{t+1}||}$ 取到最大值，也就是函数增长最快的方向（注意这里是增长最快的方向，不是增长最快的点，因为点还需要考虑到步长等因素），对应的，当方向相反时变化率取到最小值，这也就是梯度下降的最优性证明。
+上述不等式当且仅当 $\nabla F(\vec{X_t})$ 与方向向量 $l_t$ 方向相同时等号成立。也就意味着，点 $X_t$ 与邻域内的另一点 $X_{t+1}$ 构成的向量 $X_tX_{t+1}$ 方向与函数 $F(\vec{X})$ 在点 $X_t$ 上的梯度方向一致时，函数的变化率 $\lim_{|| X_tX_{t+1}|| \rightarrow0} \frac{F(X_{t+1}) - F(X_t)}{|| X_tX_{t+1}||}$ 取到最大值，也就是函数增长最快的方向（注意这里是增长最快的方向，不是增长最快的点，因为点还需要考虑到步长等因素），对应的，当方向相反时变化率取到最小值，这也就是梯度下降的最优性证明。
 
 当然我们讨论的最优性只是针对与某一点 $X_t$ 而言，也就是如果只知道 $X_t$ 这个点上的信息，那么梯度方向是最优的，但这种最优只是保证其能收敛到局部的极值点，至于这个极值点好还是不好，梯度下降并不能保证，所以才有了动量项、二阶矩等其他优化方法来改进梯度下降这一弱点。
 
