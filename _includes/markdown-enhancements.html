@@ -10,6 +10,12 @@
   {%- include markdown-enhancements/plotly.html -%}
 {%- endif -%}
 
+{%- include snippets/assign.html target=site.data.variables.default.viz
+  source0=site.viz source1=page.viz -%}
+{%- if __return == true -%}
+  {%- include markdown-enhancements/viz.html -%}
+{%- endif -%}
+
 {%- include snippets/assign.html target=site.data.variables.default.mathjax
   source0=site.mathjax source1=page.mathjax -%}
 {%- if __return == true -%}

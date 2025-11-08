@@ -12,6 +12,7 @@ default:
   mermaid: false
   chart: false
   plotly: false
+  viz: false
   toc:
     selectors: 'h1,h2,h3'
   sources: bootcdn
@@ -47,6 +48,7 @@ sources:
     leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js'
     chart: 'https://cdn.bootcdn.net/ajax/libs/Chart.js/4.5.0/chart.umd.min.js'
     plotly: 'https://cdn.bootcdn.net/ajax/libs/plotly.js/3.1.0/plotly.min.js'
+    viz: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.20.0/dist/viz-global.min.js' # bootcdn 只支持到 2.1.2
     gitalk:
       js: 'https://cdn.bootcdn.net/ajax/libs/gitalk/1.2.2/gitalk.min.js'
       css: 'https://cdn.bootcdn.net/ajax/libs/gitalk/1.2.2/gitalk.min.css'
@@ -60,6 +62,7 @@ sources:
     leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js'
     chart: 'https://unpkg.com/chart.js@4.5.0/dist/chart.umd.min.js'
     plotly: 'https://unpkg.com/plotly.js@3.1.0/dist/plotly.min.js'
+    viz: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.20.0/dist/viz-global.min.js' # unpkg 只支持到 2.1.2
     gitalk:
       js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js'
       css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
@@ -74,6 +77,7 @@ sources:
     leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js'
     chart: '/assets/js/Chart.js/4.5.0/chart.umd.min.js'
     plotly: '/assets/js/plotly/3.1.0/plotly.min.js'
+    viz: '/assets/js/viz/3.20.0/viz-global.min.js'
     gitalk:
       js: '/assets/js/gitalk/1.2.2/gitalk.min.js'
       css: '/assets/css/gitalk/1.2.2/gitalk.min.css'

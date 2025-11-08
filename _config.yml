@@ -96,6 +96,9 @@ chart: false # false (default), true
 ## Plotly
 plotly: false # false (default), true
 
+# Viz
+viz: false # false (default), true
+
 
 ## => Paginate
 ##############################

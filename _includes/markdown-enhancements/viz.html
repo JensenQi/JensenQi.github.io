@@ -1,0 +1,17 @@
+{%- include snippets/get-sources.html -%}
+{%- assign _sources = __return -%}
+<script>
+    console.log("viz")
+    window.Lazyload.js(['{{ _sources.jquery }}', '{{ _sources.viz }}'], function () {
+        Viz.instance().then(function (viz) {
+            var $this = null, _text = '';
+            $('.language-viz').each(function () {
+                $this = $(this); // <code/> 元素
+                _text = $this.text();
+                $this.parent().replaceWith(function () { // pre.code 替换成 div 然后追加 viz
+                    return $('<div></div>').append(viz.renderSVGElement(_text))
+                })
+            });
+        });
+    });
+</script>
