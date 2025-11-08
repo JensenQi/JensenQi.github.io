@@ -85,13 +85,16 @@ toc:
 ##############################
 ## Mathjax
 mathjax: false # false (default), true
-mathjax_autoNumber: false # false (default), true
+mathjax_autoNumber: true # true (default), false
 
 ## Mermaid
 mermaid: false # false (default), true
 
 ## Chart
 chart: false # false (default), true
+
+## Plotly
+plotly: false # false (default), true
 
 
 ## => Paginate
@@ -102,7 +105,7 @@ paginate_path: /page:num # don't change this unless for special need
 
 ## => Sources
 ##############################
-sources: bytedance # bootcdn (default), unpkg, bytedance
+sources: local # bootcdn (default), unpkg, local
 
 
 ## => Sharing

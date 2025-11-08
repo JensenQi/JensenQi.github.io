@@ -1,0 +1,24 @@
+{%- include snippets/get-sources.html -%}
+{%- assign _sources = __return -%}
+<script>
+    var globalConfig = {
+        displaylogo: false, // 关闭右上角菜单页的 logo
+        modeBarButtonsToRemove: ['select2d', 'lasso2d', 'autoScale2d'],
+    }
+    window.Lazyload.js(['{{ _sources.jquery }}', '{{ _sources.plotly }}'], function () {
+        var $canvas = null, $this = null;
+        $('.language-plotly').each(function () {
+            $this = $(this); // <code/> 元素
+            eval($this.text());
+            var data
+            var layout
+            $canvas = $('<div></div>');
+            $this.parent().replaceWith(function () { // pre.code 替换成 div
+                return $canvas
+            })
+
+            // 用 get(0) 将 HTMLElement 元素取出来然后绘制图像
+            Plotly.newPlot($canvas.get(0) , data, layout, globalConfig);
+        });
+    });
+</script>
